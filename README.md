@@ -1,2 +1,2 @@
 # Study
-This repository stores some study sources. 
+This repository stores some study notes and resources. 
