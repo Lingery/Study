@@ -4,11 +4,12 @@
 
 ## Java语言发展史
 
-· 创造者：詹姆斯·高斯林（James Gosling） 
+詹姆斯•高斯林（James Gosling）1977年获得了加拿大卡尔加里大学计算机科学学士学位，1983年获得了美国卡内基梅隆大学计算机科学博士学位，毕业后到IBM工作，设计IBM第一代工作站NeWS系统，但不受重视。后来转至Sun公司，1990年，与Patrick，Naughton和Mike Sheridan等人合作“绿色计划”，后来发展一套语言叫做“Oak”，后改名为Java。 
 
 ### SUN
 
-* (Stanford University Network斯坦福大学网络公司)
+(Stanford University Network斯坦福大学网络公司)
+### Java语言版本
 * 1995年5月23日，Java语言诞生
 * 1996年1月	JDK1.0
 * 1997年2月	JDK1.1
@@ -43,9 +44,17 @@
 
 ![Java语言跨平台原理](./images/01/01Java.png)
 
+## JVM
+
+JVM是java虚拟机(JVM Java Virtual Machine)，java程序需要运行在虚拟机上，不同平台有自己的虚拟机，因此java语言可以跨平台
+
 ## JRE和JDK
 
+JRE:JVM+类库
+
 ![JRE和JDK](./images/01/02JRE.jpg)
+
+JDK:JRE+JAVA开发工具
 
 ## 常用DOS命令
 
@@ -71,15 +80,32 @@
 程序的编译和执行需要使用到javac和java命令，所以只能在bin目录下写程序
 实际开发中，不可能把程序写到bin目录下，所以我们必须让javac和java命令在任意目录下能够访问
 - 如何配置
-创建新的变量名称：JAVA_HOME
-计算机-右键属性-高级系统设置-高级-环境变量-系统变量
-为JAVA_HOME添加变量值：JDK安装目录
-在path环境变量最前面添加如下内容
-%JAVA_HOME%\bin;
+	- 创建新的变量名称：JAVA_HOME
+	- 计算机-右键属性-高级系统设置-高级-环境变量-系统变量
+	- 为JAVA_HOME添加变量值：JDK安装目录
+	- 在path环境变量最前面添加如下内容
+	%JAVA_HOME%\bin;
 
 ## HelloWorld案例
 
-完整代码：HelloWorld.java
+### 执行流程
+
+![helloworld执行流程](./images/01/03helloworld.jpg)
+
+### 编写代码步骤
+
+1. 首先定义一个类
+		public class 类名
+2. 在类定义后加上一对大括号
+		{}
+3. 在大括号中间添加一个主(main)方法/函数
+		public static void main(String [] args){ }
+	main是程序的入口方法，所有代码的执行都是从main方法开始的
+
+4. 在主方法的大括号中间添加一行输出语句
+		System.out.println(“HelloWorld”);
+
+### 完整代码：HelloWorld.java
 ```
 public class HelloWorld {
 	public static void main(String [] args) {
@@ -87,9 +113,26 @@ public class HelloWorld {
 	}
 }
 ```
-
+### 运行步骤
 - 在命令行模式中，输入javac命令对源代码进行编译，生成字节码文件
 		javac HelloWorld.java
 - 编译完成后，如果没有报错信息，输入java命令对class字节码文件进行解释运行,执行时不需要添加.class扩展名
 		java HelloWorld
 
+## HelloWorld案例常见问题
+
+1. 找不到文件
+	 a:文件扩展名隐藏导致编译失败
+	 b:文件名写错了
+2. 单词拼写问题
+	 a:class写成Class
+	 b:String写成string
+	 c:System写成system
+	 d:main写成mian
+3. 括号匹配问题
+	 a:把类体的那对大括号弄掉一个
+	 b:把方法体的那对大括号弄掉一个
+	 c:把输出语句的那对小括号弄掉一个
+4. 中英文问题
+ a:提示信息：错误: 非法字符: \????的格式
+	 注意：java编程中需要的基本上都是英文字符
