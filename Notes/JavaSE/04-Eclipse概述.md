@@ -40,6 +40,13 @@ Eclipse是一个IDE(Integrated Development Environment，集成开发环境)
 	- 运行
 	右键 -- Run as - Java Application即可
 
+### 自动生成构造方法
+
+ * 代码区域右键 -- Source -- Generate Constructors from Superclass...	无参构造方法
+ * 代码区域右键 -- Source -- Generate Constructor using Fields...		带参构造方法
+ * 自动生成getXxx()/setXxx():
+ * 代码区域右键 -- Source -- Generate Getters and Setters...
+
 ## Eclipse中工作空间的基本配置
 
 1. 如何去掉默认注释?
@@ -88,7 +95,34 @@ Eclipse是一个IDE(Integrated Development Environment，集成开发环境)
 	- 点击next,然后选择你要导入的项目
 注意：这里选择的是项目名称
 
+## Eclipse断点调试
 
+Eclipse的断点调试可以查看程序的执行流程和解决程序中的bug
 
+	断点调试：查看程序的执行流程，调试程序
+	A:什么是断点：
+		 就是一个标记，从哪里开始。
+	 B:如何设置断点：
+		 你想看哪里的程序，你就在那个有效程序的左边双击即可。
+	 C:在哪里设置断点：
+		 哪里不会点哪里。
+		 目前：我们就在每个方法的第一条有效语句上都加。
+	 D:如何运行设置断点后的程序：
+		 右键 -- Debug as -- Java Application
+	 E:看哪些地方：
+		 Debug：断点测试的地方，看程序的执行步骤
+		 在这个地方，记住F6，或者点击Step Over也可以执行下一步。一次看一行的执行过程。
+		 Variables：查看程序的变量变化，创建，赋值，销毁等
+		 ForDemo：被查看的源文件
+		 Console：控制台
+	 F:如何去断点：
+		 再次双击即可
+		 找到Debug视图，Variables界面，找到Breakpoints，并点击，然后看到所有的断点，最后点击那个双叉。
+
+![调试流程](./images/04/08debug.png)
+
+![调试流程图](./images/04/09debug.png)
     
+![调试各按钮解析](./images/04/10debug.png)
+
 
