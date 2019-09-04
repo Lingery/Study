@@ -169,6 +169,12 @@ String(char[] value, int index, int count)://把字符数组中的一部分数�
  * length()加上charAt()
  * 把字符串转换为字符数组，然后遍历数组
 
+#### 字符串分割
+
+String[] split(String regex)根据给定正则表达式的匹配拆分此字符串
+String[] split(String regex, int limit)根据匹配给定的正则表达式来拆分此字符串
+
+
 #### String类的其他常用功能
 
 - 去除字符串两端空格	
@@ -381,6 +387,12 @@ C:释放资源
 
 java.io.FileNotFoundException: fr.txt (系统找不到指定的文件。)
 
+#### FileReader其他读方法
+
+read(char[] cbuf) 将字符读入数组
+read(char[] cbuf, int off, int len)将字符读入数组的某一部分
+read(CharBuffer target) 试图将字符读入指定的字符缓冲区
+
 #### 复制文件
 
 	int ch;
@@ -396,4 +408,33 @@ java.io.FileNotFoundException: fr.txt (系统找不到指定的文件。)
 	}
 
 ![复制文件图解](./images/06/05CopyFile.png)
+
+### 字符缓冲流
+
+BufferedWriter:将文本写入字符输出流，缓冲各个字符，从而提供单个字符、数组和字符串的高效写入
+
+	BufferedWriter bw = new BufferedWriter(new FileWriter("bw.txt"));
+
+BufferedReader:从字符输入流中读取文本，缓冲各个字符，从而实现字符、数组和行的高效读取
+
+	BufferedReader br = new BufferedReader(new FileReader("FileWriterDemo.java"));
+
+#### 缓冲流的特有方法
+
+```
+BufferedWriter
+ 	void newLine():写一个换行符，这个换行符由系统决定,不同的操作系统newLine()方法使用的换行符不同
+windows:\r\n 
+linux:\n 
+mac:\r
+BufferedReader
+ 	String readLine():一次读取一行数据，但是不读取换行符
+
+	String line;
+	while((line=br.readLine())!=null) {
+		array.add(line);
+	}
+
+```
+
 
